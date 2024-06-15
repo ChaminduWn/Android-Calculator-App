@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Calculator App</string>
+    <string name="button_clear"> C </string>
+
 </resources>
