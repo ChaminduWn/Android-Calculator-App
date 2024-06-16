@@ -8,8 +8,8 @@
 
     <string name="button_left_bracket"> ( </string>
     <string name="button_right_bracket"> ) </string>
-    <string name="button_devision"> ÷ </string>
-    <string name="button_mutiply"> × </string>
+    <string name="button_division"> ÷ </string>
+    <string name="button_multiply"> × </string>
     <string name="button_minus"> - </string>
     <string name="button_plus"> + </string>
     <string name="button_modulus"> % </string>
