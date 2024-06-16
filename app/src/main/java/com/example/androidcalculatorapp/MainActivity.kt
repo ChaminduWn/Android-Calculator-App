@@ -2,121 +2,113 @@ package com.example.androidcalculatorapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.button_0
-import kotlinx.android.synthetic.main.activity_main.button_1
-import kotlinx.android.synthetic.main.activity_main.button_2
-import kotlinx.android.synthetic.main.activity_main.button_3
-import kotlinx.android.synthetic.main.activity_main.button_4
-import kotlinx.android.synthetic.main.activity_main.button_5
-import kotlinx.android.synthetic.main.activity_main.button_6
-import kotlinx.android.synthetic.main.activity_main.button_7
-import kotlinx.android.synthetic.main.activity_main.button_8
-import kotlinx.android.synthetic.main.activity_main.button_9
-import kotlinx.android.synthetic.main.activity_main.button_clear
-import kotlinx.android.synthetic.main.activity_main.button_devision
-import kotlinx.android.synthetic.main.activity_main.button_dot
-import kotlinx.android.synthetic.main.activity_main.button_equals
-import kotlinx.android.synthetic.main.activity_main.button_left_bracket
-import kotlinx.android.synthetic.main.activity_main.button_minus
-import kotlinx.android.synthetic.main.activity_main.button_modulus
-import kotlinx.android.synthetic.main.activity_main.button_mutiply
-import kotlinx.android.synthetic.main.activity_main.button_plus
-import kotlinx.android.synthetic.main.activity_main.button_right_bracket
-import kotlinx.android.synthetic.main.activity_main.input
-import kotlinx.android.synthetic.main.activity_main.output
-import java.lang.Exception
+import androidx.core.content.ContextCompat
+import com.example.androidcalculatorapp.databinding.ActivityMainBinding
+import org.mariuszgromada.math.mxparser.Expression
+import java.text.DecimalFormat
 import kotlin.Exception
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        button_clear.setOnClickListener {
-            input.text = ""
-            output.text =""
-
+        binding.buttonClear.setOnClickListener {
+            binding.input.text = ""
+            binding.output.text = ""
         }
 
-        button_left_bracket.setOnClickListener {
-            input.text= addToInput("(")
+        binding.buttonLeftBracket.setOnClickListener {
+            binding.input.text = addToInput("(")
         }
-        button_right_bracket.setOnClickListener {
-            input.text= addToInput(")")
+        binding.buttonRightBracket.setOnClickListener {
+            binding.input.text = addToInput(")")
         }
-        button_0.setOnClickListener {
-            input.text = addToInput("0")
+        binding.button0.setOnClickListener {
+            binding.input.text = addToInput("0")
         }
-        button_1.setOnClickListener {
-            input.text = addToInput("1")
+        binding.button1.setOnClickListener {
+            binding.input.text = addToInput("1")
         }
-        button_2.setOnClickListener {
-            input.text = addToInput("2")
+        binding.button2.setOnClickListener {
+            binding.input.text = addToInput("2")
         }
-        button_3.setOnClickListener {
-            input.text = addToInput("3")
+        binding.button3.setOnClickListener {
+            binding.input.text = addToInput("3")
         }
-        button_4.setOnClickListener {
-            input.text = addToInput("4")
+        binding.button4.setOnClickListener {
+            binding.input.text = addToInput("4")
         }
-        button_5.setOnClickListener {
-            input.text = addToInput("5")
+        binding.button5.setOnClickListener {
+            binding.input.text = addToInput("5")
         }
-        button_6.setOnClickListener {
-            input.text = addToInput("6")
+        binding.button6.setOnClickListener {
+            binding.input.text = addToInput("6")
         }
-        button_7.setOnClickListener {
-            input.text = addToInput("7")
+        binding.button7.setOnClickListener {
+            binding.input.text = addToInput("7")
         }
-        button_8.setOnClickListener {
-            input.text = addToInput("8")
+        binding.button8.setOnClickListener {
+            binding.input.text = addToInput("8")
         }
-        button_9.setOnClickListener {
-            input.text = addToInput("9")
+        binding.button9.setOnClickListener {
+            binding.input.text = addToInput("9")
         }
-        button_clear.setOnClickListener {
-            input.text =addToInput("C")
+//        binding.buttonClear.setOnClickListener {
+//            binding.input.text = addToInput("C")
+//        }
+        binding.buttonDot.setOnClickListener {
+            binding.input.text = addToInput(".")
         }
-        button_dot.setOnClickListener {
-            input.text = addToInput(".")
+        binding.buttonMinus.setOnClickListener {
+            binding.input.text = addToInput("-")
         }
-        button_minus.setOnClickListener {
-            input.text = addToInput("-")
+        binding.buttonPlus.setOnClickListener {
+            binding.input.text = addToInput("+")
         }
-        button_plus.setOnClickListener {
-            input.text = addToInput("+")
+        binding.buttonModulus.setOnClickListener {
+            binding.input.text = addToInput("%")
         }
-        button_modulus.setOnClickListener {
-            input.text = addToInput("%")
+        binding.buttonDevision.setOnClickListener {
+            binding.input.text = addToInput("÷")
         }
-        button_devision.setOnClickListener {
-            input.text = addToInput("÷")
+        binding.buttonMutiply.setOnClickListener {
+            binding.input.text = addToInput("×")
         }
-        button_mutiply.setOnClickListener {
-            input.text = addToInput("×")
-        }
-        button_equals.setOnClickListener {
+        binding.buttonEquals.setOnClickListener {
             showResult()
         }
-
-
     }
 
-    private fun addToInput(buttonValue: String):String {
-        return "${input.text}$buttonValue"
-
+    private fun addToInput(buttonValue: String): String {
+        return "${binding.input.text}$buttonValue"
     }
 
     private fun getInputExpression(): String {
-        var expression = input.text.replace(Regex("÷"),"/")
-        expression = expression.replace(Regex("×"),"*")
+        var expression = binding.input.text.toString().replace(Regex("÷"), "/")
+        expression = expression.replace(Regex("×"), "*")
         return expression
     }
 
-    private fun showResult(){
-        try{
+    private fun showResult() {
+        try {
             val expression = getInputExpression()
-        } catch (e: Exception){
+            val result = Expression(expression).calculate()
+            if (result.isNaN()) {
+                binding.output.text = "Error"
+                binding.output.setTextColor(ContextCompat.getColor(this,R.color.red))
+
+            } else {
+                binding.output.text = DecimalFormat("0.######").format(result).toString()
+                binding.output.setTextColor(ContextCompat.getColor(this,R.color.green))
+
+            }
+        } catch (e: Exception) {
+            binding.output.text = "Error"
+            binding.output.setTextColor(ContextCompat.getColor(this,R.color.red))
 
         }
     }
