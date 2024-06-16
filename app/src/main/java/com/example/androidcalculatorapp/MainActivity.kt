@@ -72,10 +72,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonModulus.setOnClickListener {
             binding.input.text = addToInput("%")
         }
-        binding.buttonDevision.setOnClickListener {
+        binding.buttonDivision.setOnClickListener {
             binding.input.text = addToInput("÷")
         }
-        binding.buttonMutiply.setOnClickListener {
+        binding.buttonMultiply.setOnClickListener {
             binding.input.text = addToInput("×")
         }
         binding.buttonEquals.setOnClickListener {
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
             val expression = getInputExpression()
             val result = Expression(expression).calculate()
             if (result.isNaN()) {
-                binding.output.text = "Error"
+//                binding.output.text = "Error"
                 binding.output.setTextColor(ContextCompat.getColor(this,R.color.red))
 
             } else {
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         } catch (e: Exception) {
-            binding.output.text = "Error"
+//            binding.output.text = "Error"
             binding.output.setTextColor(ContextCompat.getColor(this,R.color.red))
 
         }

@@ -20,11 +20,11 @@
 
         <TextView
             android:id="@+id/input"
-            android:layout_width="match_parent"
+            android:layout_width="349dp"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:textSize="30sp"
             android:textColor="@color/white"
+            android:textSize="30sp"
             tools:text="5+10-3" />
 
         <TextView
@@ -48,31 +48,35 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_clear"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_clear" />
+                android:text="@string/button_clear"
+                android:textColor="@color/red" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_left_bracket"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_left_bracket" />
+                android:text="@string/button_left_bracket"
+                android:textColor="@color/purple_200" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_right_bracket"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_right_bracket" />
+                android:text="@string/button_right_bracket"
+                android:textColor="@color/purple_200" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_devision"
+                android:id="@+id/button_division"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_devision" />
+                android:text="@string/button_division"
+                android:textColor="@color/purple_200" />
 
         </TableRow>
         <TableRow>
@@ -99,11 +103,12 @@
                 android:text="@string/button_9" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_mutiply"
+                android:id="@+id/button_multiply"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_multiply" />
+                android:text="@string/button_multiply"
+                android:textColor="@color/purple_200" />
 
         </TableRow>
         <TableRow>
@@ -134,7 +139,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
                 style="@style/Button_Style"
-                android:text="@string/button_minus" />
+                android:text="@string/button_minus"
+                android:textColor="@color/purple_200" />
 
         </TableRow>
         <TableRow>
@@ -162,10 +168,11 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_plus"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_plus" />
+                android:text="@string/button_plus"
+                android:textColor="@color/purple_200" />
 
         </TableRow>
 
@@ -194,10 +201,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_equals"
+                style="@style/Button_Style"
                 android:layout_width="wrap_content"
                 android:layout_height="90dp"
-                style="@style/Button_Style"
-                android:text="@string/button_equals" />
+                android:background="@color/purple_200"
+                android:text="@string/button_equals"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
         </TableRow>
 
