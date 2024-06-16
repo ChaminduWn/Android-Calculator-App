@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/input"
-            android:layout_width="349dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:textColor="@color/white"
