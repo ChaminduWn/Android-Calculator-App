@@ -1,7 +1,8 @@
   <center><h1>Android Calculator App</h1></center>
-<center>
+
 ![Frame 1 (3)](https://github.com/user-attachments/assets/7214c411-d822-4cb0-87a6-5707a0521e43)
-</center>
+
+
    <br>
   <p>This Android application provides a simple calculator interface for performing basic arithmetic operations. It features a clean UI with buttons for numbers, operators, and parentheses, along with an input and output display area. The calculator supports addition, subtraction, multiplication, division, modulus, and decimal operations. Error handling ensures that invalid expressions are handled gracefully.</p>
 
