@@ -1,5 +1,6 @@
   <center><h1>Android Calculator App</h1></center>
-![Frame 1 (4)](https://github.com/user-attachments/assets/d61652b5-9c41-47eb-8425-9ad01cb3a617)
+<img src="![Frame 1 (4)](https://github.com/user-attachments/assets/d61652b5-9c41-47eb-8425-9ad01cb3a617)">
+
 
   <center><img src="https://github.com/chamindu2001/Android-Calculator-App/assets/127916715/fba5cdb9-75ff-4030-b16f-7980cfe12f10" alt="calculator logo"></center>
 
